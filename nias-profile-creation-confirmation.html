@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Creation - Natural Ingredient Alert System (NIAS)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #4CAF50;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hidden {
+            display: none;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Creating Your Profile</h1>
+        <div id="loader" class="loader"></div>
+        <p id="status-message">Please wait while we set up your profile...</p>
+        <div id="completion-message" class="hidden">
+            <h2>Profile Created Successfully!</h2>
+            <p>Your company profile has been created and is now live on the NIAS platform.</p>
+            <a href="nias-company-profile.html" class="button">View Your Profile</a>
+        </div>
+    </div>
+
+    <script>
+        // Simulate profile creation process
+        setTimeout(function() {
+            document.getElementById('loader').classList.add('hidden');
+            document.getElementById('status-message').classList.add('hidden');
+            document.getElementById('completion-message').classList.remove('hidden');
+        }, 3000); // 3 second delay to simulate processing
+    </script>
+</body>
+</html>

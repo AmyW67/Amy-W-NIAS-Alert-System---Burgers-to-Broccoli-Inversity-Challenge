@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Profile - Natural Ingredient Alert System (NIAS)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header{
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        form {
+            display: grid;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Create Your Company Profile</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="nias-homepage.html">Home</a></li>
+            <li><a href="nias-about-page.html">About</a></li>
+            <li><a href="nias-database-page.html">Database</a></li>
+            <li><a href="nias-alerts-page.html">Alerts</a></li>
+            <li><a href ="nias-company-profile.html">Profile</a></li>
+            <li><a href="nias-badges-page.html">Badges</a></li>
+            <li><a href="nias-leaderboard.html">Leaderboard</a></li>
+            <li><a href="nias-contact-page.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Join the NIAS community and showcase your commitment to natural ingredients. Fill out the form below to create your company profile.</p>
+        
+        <form id="create-profile-form">
+            <label for="company-name">Company Name:</label>
+            <input type="text" id="company-name" name="company-name" required>
+            
+            <label for="food produced">Food Produced:</label>
+            <select id="food produced" name="food produced" required>
+                <option value="">Select Food Type Produced</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Ready Meals">Ready Meals</option>
+                <option value="Canned"> Canned</option>
+                <option value="Beverages">Beverages</option>
+                <option value="Bread Products">Bread Products</option>
+                <option value="Sweets and Candy">Sweets and Candy</option>
+                <option value="Dairy">Dairy</option>
+                <option value="a mix">Multiple Types of Food</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="founded-year">Year Founded:</label>
+            <input type="number" id="founded-year" name="founded-year" min="1800" max="2024" required>
+            
+            <label for="website">Company Website:</label>
+            <input type="url" id="website" name="website" required>
+            
+            <label for="contact-email">Contact Email:</label>
+            <input type="email" id="contact-email" name="contact-email" required>
+            
+            <label for="sustainability-statement">Sustainability Statement:</label>
+            <textarea id="sustainability-statement" name="sustainability-statement" rows="4" required></textarea>
+            
+            <label for="natural-ingredients">Number of Natural Ingredients Currently Used:</label>
+            <input type="number" id="natural-ingredients" name="natural-ingredients" min="0" required>
+            
+            <label for="products-transformed">Number of Products Already Transformed:</label>
+            <input type="number" id="products-transformed" name="products-transformed" min="0" required>
+            
+            <label for="eco-partnerships">Number of Eco-Friendly Partnerships:</label>
+            <input type="number" id="eco-partnerships" name="eco-partnerships" min="0" required>
+            
+            <button type="submit">Create Profile</button>
+        </form>
+    </main>
+
+    <script>
+        document.getElementById('create-profile-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Profile created successfully! Redirecting to your new profile page.');
+            // Redirect to the profile page (in a real application, this would be a unique URL)
+            window.location.href = 'nias-profile-creation-confirmation.html';
+        });
+    </script>
+</body>
+</html>

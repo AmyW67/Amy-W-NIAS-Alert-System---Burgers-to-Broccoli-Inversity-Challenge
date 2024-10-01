@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database - Natural Ingredient Alert System (NIAS)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .search-bar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NIAS Ingredient Database</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="nias-homepage.html">Home</a></li>
+            <li><a href="nias-about-page.html">About</a></li>
+            <li><a href="nias-database-page.html">Database</a></li>
+            <li><a href = "nias-ai-recipe-generator.html">Recipe Modifier</li>
+            <li><a href="nias-alerts-page.html">Alerts</a></li>
+            <li><a href ="nias-company-profile.html">Profile</a></li>
+            <li><a href="nias-badges-page.html">Badges</a></li>
+            <li><a href="nias-leaderboard.html">Leaderboard</a></li>
+            <li><a href="nias-contact-page.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <input type="text" class="search-bar" placeholder="Search for ingredients...">
+        <table>
+            <thead>
+                <tr>
+                    <th>Chemical Ingredient</th>
+                    <th>Natural Alternative</th>
+                    <th>Price Comparison</th>
+                    <th>Source Information</th>
+                    <th>User Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sodium Benzoate</td>
+                    <td>Rosemary Extract</td>
+                    <td>Chemical: $2.50/kg<br>Natural: $3.00/kg</td>
+                    <td><a href="#">NaturalPreserves Inc.</a></td>
+                    <td>4.5/5</td>
+                </tr>
+                <tr>
+                    <td>Artificial Red 40</td>
+                    <td>Beetroot Extract</td>
+                    <td>Chemical: $5.00/kg<br>Natural: $6.50/kg</td>
+                    <td><a href="#">ColorfulNature Co.</a></td>
+                    <td>4.2/5</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Badges - Natural Ingredient Alert System (NIAS)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        .badge {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .badge-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .badge-info {
+            flex-grow: 1;
+        }
+        .progress-bar {
+            background-color: #e0e0e0;
+            height: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .progress {
+            background-color: #4CAF50;
+            height: 100%;
+            border-radius: 10px;
+            width: 0;
+            transition: width 0.5s ease-in-out;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NIAS Eco-Friendly Badges</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="nias-homepage.html">Home</a></li>
+            <li><a href="nias-about-page.html">About</a></li>
+            <li><a href="nias-database-page.html">Database</a></li>
+            <li><a href = "nias-ai-recipe-generator.html">Recipe Modifier</li>
+            <li><a href="nias-alerts-page.html">Alerts</a></li>
+            <li><a href ="nias-company-profile.html">Profile</a></li>
+            <li><a href="nias-badges-page.html">Badges</a></li>
+            <li><a href="nias-leaderboard.html">Leaderboard</a></li>
+            <li><a href="nias-contact-page.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Earn Badges for Using Natural Ingredients</h2>
+        <p>Track your progress and showcase your commitment to natural ingredients!</p>
+        
+        <div class="badge">
+            <div class="badge-icon">NN</div>
+            <div class="badge-info">
+                <h3>Natural Novice</h3>
+                <p>Purchase your first natural ingredient</p>
+                <div class="progress-bar">
+                    <div class="progress" id="novice-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            <button onclick="updateProgress('novice-progress', 100)">Claim</button>
+        </div>
+        
+        <div class="badge">
+            <div class="badge-icon">EE</div>
+            <div class="badge-info">
+                <h3>Eco Explorer</h3>
+                <p>Purchase 5 different natural ingredients</p>
+                <div class="progress-bar">
+                    <div class="progress" id="explorer-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            <button onclick="updateProgress('explorer-progress', 20)">Log Purchase</button>
+        </div>
+        
+        <div class="badge">
+            <div class="badge-icon">SP</div>
+            <div class="badge-info">
+                <h3>Sustainability Pro</h3>
+                <p>Replace 50% of your ingredients with natural alternatives</p>
+                <div class="progress-bar">
+                    <div class="progress" id="pro-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            <button onclick="updateProgress('pro-progress', 10)">Update Progress</button>
+        </div>
+        
+        <div class="badge">
+            <div class="badge-icon">NC</div>
+            <div class="badge-info">
+                <h3>Nature Champion</h3>
+                <p>Use 100% natural ingredients for a full product line</p>
+                <div class="progress-bar">
+                    <div class="progress" id="champion-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            <button onclick="updateProgress('champion-progress', 5)">Log Achievement</button>
+        </div>
+    </main>
+
+    <script>
+        function updateProgress(id, increment) {
+            const progressBar = document.getElementById(id);
+            let currentWidth = parseInt(progressBar.style.width) || 0;
+            let newWidth = Math.min(currentWidth + increment, 100);
+            progressBar.style.width = newWidth + '%';
+            
+            if (newWidth === 100) {
+                alert('Congratulations! You\'ve earned this badge!');
+            }
+        }
+    </script>
+</body>
+</html>

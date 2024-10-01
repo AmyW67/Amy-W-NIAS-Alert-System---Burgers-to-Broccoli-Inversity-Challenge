@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recipe Modifier</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #result {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NIAS Natural Ingredient Replacement Tool</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="nias-homepage.html">Home</a></li>
+            <li><a href="nias-about-page.html">About</a></li>
+            <li><a href="nias-database-page.html">Database</a></li>
+            <li><a href = "nias-ai-recipe-generator.html">Recipe Modifier</li>
+            <li><a href="nias-alerts-page.html">Alerts</a></li>
+            <li><a href ="nias-company-profile.html">Profile</a></li>
+            <li><a href="nias-badges-page.html">Badges</a></li>
+            <li><a href="nias-leaderboard.html">Leaderboard</a></li>
+            <li><a href="nias-contact-page.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main role="main">
+        <p>Enter your recipe below, and our AI will suggest natural alternatives for artificial ingredients:</p>
+        <textarea id="recipe" placeholder="Enter your recipe here..."></textarea>
+        <button onclick="generateAlternatives()">Generate Natural Alternatives</button>
+        <div id="loader" class="loader"></div>
+        <div id="result"></div>
+    </main>
+
+    <script>
+        function generateAlternatives() {
+            const recipe = document.getElementById('recipe').value;
+            if (!recipe) {
+                alert('Please enter a recipe first.');
+                return;
+            }
+
+            document.getElementById('loader').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+
+            // Simulating AI processing
+            setTimeout(() => {
+                const alternatives = processRecipe(recipe);
+                displayResults(alternatives);
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('result').style.display = 'block';
+            }, 2000);
+        }
+
+        function processRecipe(recipe) {
+            const artificialIngredients = {
+                'artificial flavor': 'natural extracts (e.g., vanilla, almond, citrus zest)',
+                'food coloring': 'natural food colorings (e.g., beet juice, turmeric, spirulina)',
+                'msg': 'nutritional yeast or mushroom powder',
+                'high fructose corn syrup': 'honey or maple syrup',
+                'aspartame': 'stevia or monk fruit sweetener',
+                'sodium nitrite': 'celery juice powder or sea salt',
+                'potassium sorbate': 'citric acid or vinegar',
+                'carrageenan': 'agar-agar or gelatin',
+                'propylene glycol': 'vegetable glycerin',
+                'bha/bht': 'rosemary extract or vitamin E (tocopherols)',
+                'sodium benzoate': 'rosemary extract',
+                'potassium benzoate': 'ascorbic acid (vitamin C) or citric acid',
+                'sulfites': 'citric acid or ascorbic acid',
+                'calcium propionate': 'vinegar or fermented whey',
+                'sodium nitrate': 'celery juice powder or sea salt',
+                'butylated hydroxyanisole': 'rosemary extract or vitamin C',
+                'artificial sweeteners': 'stevia, monk fruit, or natural sugar alternatives',
+                'monosodium glutamate': 'yeast extract or seaweed',
+                'trans fats': 'natural oils (olive, coconut, avocado)',
+                'partially hydrogenated oils': 'natural oils (olive, coconut, avocado)',
+                'artificial red 40': 'beetroot extract',
+                'yellow #5': 'turmeric or saffron',
+                'blue #1': 'spirulina or butterfly pea flower extract',
+                'caramel color': 'natural caramel (from caramelized sugar)',
+                'maltodextrin': 'tapioca starch or rice powder',
+                'calcium disodium edta': 'citric acid or ascorbic acid (vitamin C)'
+            };
+
+            let alternatives = [];
+            const lowercaseRecipe = recipe.toLowerCase();
+            
+            for (let [artificial, natural] of Object.entries(artificialIngredients)) {
+                if (lowercaseRecipe.includes(artificial)) {
+                    alternatives.push(`Consider replacing "${artificial}" with ${natural}.`);
+                }
+            }
+
+            // Additional check for generic terms
+            if (lowercaseRecipe.includes('preservative') || lowercaseRecipe.includes('stabilizer')) {
+                alternatives.push("For preservatives or stabilizers, consider using natural alternatives like rosemary extract, ascorbic acid (vitamin C), or citric acid.");
+            }
+
+            if (lowercaseRecipe.includes('emulsifier')) {
+                alternatives.push("For emulsifiers, consider using natural alternatives like lecithin from sunflower or soy, or guar gum.");
+            }
+
+            return alternatives;
+        }
+
+        function displayResults(alternatives) {
+            const resultDiv = document.getElementById('result');
+            if (alternatives.length > 0) {
+                resultDiv.innerHTML = '<h3>Suggested Natural Alternatives:</h3><ul>' +
+                    alternatives.map(alt => `<li>${alt}</li>`).join('') +
+                    '</ul>';
+            } else {
+                resultDiv.innerHTML = '<p>No artificial ingredients detected or all ingredients appear to be natural. If you believe there are artificial ingredients that weren\'t detected, please try specifying them more clearly.</p>';
+            }
+        }
+    </script>
+</body>
+</html>

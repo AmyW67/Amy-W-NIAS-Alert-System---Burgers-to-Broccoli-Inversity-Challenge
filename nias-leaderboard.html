@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - Natural Ingredient Alert System (NIAS)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header{
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .rank {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .badge-count {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NIAS Leaderboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="nias-homepage.html">Home</a></li>
+            <li><a href="nias-about-page.html">About</a></li>
+            <li><a href="nias-database-page.html">Database</a></li>
+            <li><a href = "nias-ai-recipe-generator.html">Recipe Modifier</li>
+            <li><a href="nias-alerts-page.html">Alerts</a></li>
+            <li><a href ="nias-company-profile.html">Profile</a></li>
+            <li><a href="nias-badges-page.html">Badges</a></li>
+            <li><a href="nias-leaderboard.html">Leaderboard</a></li>
+            <li><a href="nias-contact-page.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Top Natural Ingredient Champions</h2>
+        <p>These companies are leading the way in adopting natural ingredients. See how you stack up!</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Company</th>
+                    <th>Badges Earned</th>
+                    <th>Natural Ingredients Used</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank">1</td>
+                    <td>EcoFriendly Foods Inc.</td>
+                    <td class="badge-count">15</td>
+                    <td>78</td>
+                </tr>
+                <tr>
+                    <td class="rank">2</td>
+                    <td>Green Gourmet Co.</td>
+                    <td class="badge-count">13</td>
+                    <td>65</td>
+                </tr>
+                <tr>
+                    <td class="rank">3</td>
+                    <td>Nature's Best Snacks</td>
+                    <td class="badge-count">12</td>
+                    <td>59</td>
+                </tr>
+                <tr>
+                    <td class="rank">4</td>
+                    <td>Pure & Simple Foods</td>
+                    <td class="badge-count">10</td>
+                    <td>52</td>
+                </tr>
+                <tr>
+                    <td class="rank">5</td>
+                    <td>Organic Delights Ltd.</td>
+                    <td class="badge-count">9</td>
+                    <td>47</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+        
+        <p>Don't see your company? <a href="nias-create-profile.html">Create your profile</a> and start earning badges!</p>
+    </main>
+</body>
+</html>
